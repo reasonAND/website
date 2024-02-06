@@ -1,0 +1,39 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+}
+
+main {
+    height: 100vh;
+    width: 100vw;
+    background-color: rgb(51, 51, 51);
+}
+.section1{
+    height: 100%;
+    width: 100vw;
+    background-color: bisque;
+    text-align: center;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+.countdown {
+    font-size: 44px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px;
+}
+  
+/* Apply responsive styles for smaller screens */
+@media (max-width: 600px) {
+    main {
+      padding: 10px;
+    }
+}
+  

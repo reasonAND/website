@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome!</title>
+
+    <link rel="stylesheet" href="style.css">
+    <script>
+        function updateCountdown() {
+            // Set the date for the countdown (replace with your desired date)
+            const targetDate = new Date('2024-02-08T23:59:59').getTime();
+
+            const currentDate = new Date().getTime();
+
+            const timeRemaining = targetDate - currentDate;
+
+            const days = Math.floor(timeRemaining / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((timeRemaining % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((timeRemaining % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((timeRemaining % (1000 * 60)) / 1000);
+
+            // Display the countdown in the specified element
+            document.getElementById('countdown').innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+        }
+
+        // Update the countdown every second
+        setInterval(updateCountdown, 1000);
+
+        // Initial call to display the countdown immediately
+        updateCountdown();
+    </script>
+</head>
+<body>
+    <main>
+        <nav>
+
+        </nav>
+        <section class="section1">
+            <h1>
+                website going live in
+            </h1>
+            <div id="countdown" class="countdown"></div>
+        </section>
+        <section class="section2">
+
+        </section>
+        <section class="section3">
+
+        </section>
+    </main>
+</body>
+</html>
