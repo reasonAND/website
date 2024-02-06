@@ -8,8 +8,8 @@
     <link rel="stylesheet" href="style.css">
     <script>
         function updateCountdown() {
-            // Set the date for the countdown (replace with your desired date)
-            const targetDate = new Date('2024-02-08T23:59:59').getTime();
+    
+            const targetDate = new Date('2024-02-08T23:59:59').getTime(); // Set the date for the countdown (replace with your desired date)
 
             const currentDate = new Date().getTime();
 
@@ -20,15 +20,12 @@
             const minutes = Math.floor((timeRemaining % (1000 * 60 * 60)) / (1000 * 60));
             const seconds = Math.floor((timeRemaining % (1000 * 60)) / 1000);
 
-            // Display the countdown in the specified element
-            document.getElementById('countdown').innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+            document.getElementById('countdown').innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`; // Display the countdown in the specified element
         }
 
-        // Update the countdown every second
-        setInterval(updateCountdown, 1000);
+        setInterval(updateCountdown, 1000); // Update the countdown every second
 
-        // Initial call to display the countdown immediately
-        updateCountdown();
+        updateCountdown(); // Initial call to display the countdown immediately
     </script>
 </head>
 <body>
