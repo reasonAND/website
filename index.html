@@ -1,50 +1,13 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome!</title>
-
-    <link rel="stylesheet" href="style.css">
-    <script>
-        function updateCountdown() {
-    
-            const targetDate = new Date('2024-02-09T23:59:59').getTime(); // Set the date for the countdown (replace with your desired date)
-
-            const currentDate = new Date().getTime();
-
-            const timeRemaining = targetDate - currentDate;
-
-            const days = Math.floor(timeRemaining / (1000 * 60 * 60 * 24));
-            const hours = Math.floor((timeRemaining % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const minutes = Math.floor((timeRemaining % (1000 * 60 * 60)) / (1000 * 60));
-            const seconds = Math.floor((timeRemaining % (1000 * 60)) / 1000);
-
-            document.getElementById('countdown').innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`; // Display the countdown in the specified element
-        }
-
-        setInterval(updateCountdown, 1000); // Update the countdown every second
-
-        updateCountdown(); // Initial call to display the countdown immediately
-    </script>
-</head>
-<body>
-    <main>
-        <nav>
-
-        </nav>
-        <section class="section1">
-            <h1>
-                website going live in
-            </h1>
-            <div id="countdown" class="countdown"></div>
-        </section>
-        <section class="section2">
-
-        </section>
-        <section class="section3">
-
-        </section>
-    </main>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite + React</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
 </html>
