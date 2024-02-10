@@ -11,8 +11,13 @@ const Navbar = () => { // hides the navigation bar on scroll
       <div className="mobile sm:hidden">
         Ham
       </div>
-      <div className="desktop sm:flex hidden">
-        laura
+      <div className="desktop sm:flex sm:gap-6 hidden">
+        <div className="search">
+          search
+        </div>
+        <div className="ac-logo px-1">
+          logo
+        </div>
       </div>
       
     </div>
