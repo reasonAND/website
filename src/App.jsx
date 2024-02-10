@@ -1,5 +1,6 @@
 /* eslint-disable no-unused-vars */
 import LocomotiveScroll from 'locomotive-scroll';
+import { useEffect } from 'react';
 
 import Hero from "./components/Hero"
 import Navbar from "./components/Navbar"
@@ -11,6 +12,9 @@ import About from './components/About';
 function App() {
 
   const locomotiveScroll = new LocomotiveScroll();  
+  useEffect(() => {
+    document.title = 'Your Dynamic Title'; // Set your dynamic title here
+  }, []);
 
   return (
     <>

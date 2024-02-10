@@ -1,8 +1,8 @@
 const Navbar = () => {
   // hides the navigation bar on scroll
   return (
-    <div className=" fixed w-[100vw] flex justify-between items-center py-[10px] px-6 sm:px-8 sm:text-[16px] text-[#f7ced7] text-[17px] bg-[#242424]/50">
-      <div className="logo">
+    <div className=" fixed w-[100vw] flex justify-between items-center py-[10px] px-4 sm:px-8 sm:text-[16px] text-[#f7ced7] text-[17px] bg-slate-800/40">
+      <div className="logo px-2">
         <svg
           width="55"
           height="35"
@@ -32,9 +32,18 @@ const Navbar = () => {
         </svg>
       </div>
       <div className="hidden nav-middle desktop sm:flex">Navbar</div>
-      <div className="mobile sm:hidden">
-        Ham
-      </div>
+      <button className="mobile hamburger sm:hidden">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          x="0px"
+          y="0px"
+          width="50"
+          height="35"
+          viewBox="0 0 50 50"
+          fill="#f7ced7">
+          <path d="M 3 9 A 1.0001 1.0001 0 1 0 3 11 L 47 11 A 1.0001 1.0001 0 1 0 47 9 L 3 9 z M 3 24 A 1.0001 1.0001 0 1 0 3 26 L 47 26 A 1.0001 1.0001 0 1 0 47 24 L 3 24 z M 3 39 A 1.0001 1.0001 0 1 0 3 41 L 47 41 A 1.0001 1.0001 0 1 0 47 39 L 3 39 z"></path>
+        </svg>
+      </button>
       <div className="hidden desktop sm:flex sm:gap-5 sm:items-center">
         <button className="search  border-white/60 hover:border-[1px] hover:bg-black/35 p-[6px] rounded-full">
           <svg
