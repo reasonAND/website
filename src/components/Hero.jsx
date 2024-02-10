@@ -1,12 +1,12 @@
 
 const Hero = () => {
-  const heroText = ["Lorem", "Laura", "Lassan"];
+  const heroTexts = ["LOREM", "LAURA", "LASSAN"];
   return (
     <div className=" bg-[#242424] text-[#f7ced7] w-[100vw] h-[100vh] text-[20px]">
       <div className="sm:hidden">
         <div className="left h-[50vh] w-[100vw] px-5 py-11 sm:px-8 sm:text-[16px]">
-          <div className="my-6 leading-tight">
-            {heroText.map((title, index) => ( 
+          <div className="my-6 leading-[69px]">
+            {heroTexts.map((title, index) => ( 
               index === 1 
                 ? <div key={index} className="text-[12.5vw]">{title}</div> 
                 : <h1 key={index} className="text-[12.5vw]">{title}</h1>
