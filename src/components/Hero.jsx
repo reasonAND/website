@@ -21,7 +21,7 @@ const Hero = () => {
       <div className="hidden sm:flex w-[100vw] h-[100vh]">
         <div className="left h-full w-[50%]">
           <div className="my-6 leading-tight">
-            {heroText.map((title, index) => ( 
+            {heroTexts.map((title, index) => ( 
               index === 1 
                 ? <div key={index} className="text-[10vh]">{title}</div> 
                 : <h1 key={index} className="text-[10vh]">{title}</h1>
