@@ -1,12 +1,11 @@
-// import React from 'react'
 
-const Navbar = () => {
+const Navbar = () => { // hides the navigation bar on scroll
   return (
-    <div className="flex justify-between content-center py-1 px-3 bg-slate-700">
-      <div >
-        Logo
+    <div className="fixed w-[100vw] flex justify-between items-center py-2 px-3 text-black bg-slate-300/30">
+      <div className="logo p-[5px]">
+        logo
       </div>
-      <div>
+      <div className="nav-middle desktop sm:flex hidden">
         Navbar
       </div>
       <div className="mobile sm:hidden">
