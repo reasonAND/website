@@ -3,13 +3,13 @@ const Hero = () => {
   const heroTexts = ["LOREM", "LAURA", "NASIR"];
   return (
     <div className=" bg-[#242424] text-[#f7ced7] w-[100vw] h-[100vh] text-[20px]">
-      <div className="sm:hidden">
-        <div className="left h-[50vh] w-[100vw] px-5 py-11 sm:px-8 sm:text-[16px]">
-          <div className="my-6 leading-[75px]">
+      <div className="left h-[50vh] w-[50vw] sm:hidden">
+        <div className="px-5 py-11 sm:px-8 sm:text-[16px]">
+          <div className="my-6 leading-[75px] flex flex-col">
             {heroTexts.map((title, index) => ( 
               index === 1 
-                ? <div key={index} className="text-[12.5vw]">{title}</div> 
-                : <h1 key={index} className="text-[12.5vw]">{title}</h1>
+                ? <a key={index} href="https://www.google.com/" className="text-[12.5vw]">{title}</a> 
+                : <a key={index} href="https://www.youtube.com/" className="text-[12.5vw]">{title}</a>
             ))}
           </div>          
         </div>        
@@ -23,8 +23,8 @@ const Hero = () => {
           <div className="my-6 leading-tight">
             {heroTexts.map((title, index) => ( 
               index === 1 
-                ? <div key={index} className="text-[10vh]">{title}</div> 
-                : <h1 key={index} className="text-[10vh]">{title}</h1>
+                ? <button key={index} className="text-[10vh]">{title}</ button> 
+                : <button key={index} className="text-[10vh]">{title}</ button>
             ))}
           </div>
         </div>

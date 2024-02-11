@@ -7,7 +7,7 @@ const PreLoader = () => {
     console.log("loading");
     const timeoutId = setTimeout(() => {
       setisLoading(false);
-    }, 1500);
+    }, 2000);
 
     setisLoading(true);
     return () => clearTimeout(timeoutId);

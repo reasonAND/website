@@ -14,7 +14,13 @@ function App() {
 
   const locomotiveScroll = new LocomotiveScroll();  
   useEffect(() => {
-    // document.title = 'Welcome!'; // Set dynamic title here
+    document.title = 'Nasir Gandu'; // Set dynamic title here
+    const timeoutId = setTimeout(() => {
+      window.onunload = function() {
+        window.scrollTo(0, 0);
+      };
+    }, 500);
+    return () => clearTimeout(timeoutId);
   }, []);
 
   return (

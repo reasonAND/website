@@ -10,12 +10,10 @@ const Navbar = () => {
     isMenuOpen ? setNavOpacity(40) : setNavOpacity(100);
   };
 
-  const heroTexts = ["LOREM", "LAURA", "LASSAN"];
+  const heroTexts = ["LAURE MEY", "LAURA", "LASSAN", "NASIR"];
 
   return (
-    <div
-      className={`fixed w-[100vw] flex justify-between items-center py-[10px] px-4 sm:px-8 sm:text-[16px] text-[#f7ced7] text-[17px] bg-slate-800/${navOpacity}`}
-    >
+    <div className={`fixed w-[100vw] flex justify-between items-center py-[10px] px-4 sm:px-8 sm:text-[16px] text-[#f7ced7] text-[17px] bg-slate-800/${navOpacity}`}>
       <div className="logo px-2">
         <svg
           width="55"
@@ -46,7 +44,7 @@ const Navbar = () => {
           ></path>
         </svg>
       </div>
-      <div className="hidden nav-middle desktop sm:flex">Navbar</div>
+
       <button className="mobile hamburger sm:hidden" onClick={toggleMenu}>
         {isMenuOpen ? (
           <svg
@@ -73,7 +71,7 @@ const Navbar = () => {
         )}
       </button>
       {isMenuOpen && (
-        <div className="absolute top-full left-0 w-full h-[100vh] bg-slate-800 p-4 z-[69]">
+        <div className={`absolute top-full left-0 w-full h-[100vh] bg-slate-800 p-4 z-[69]`}>
           <p className="text-white">
             <div className="my-6 leading-[75px]">
               {heroTexts.map((title, index) =>
@@ -92,6 +90,7 @@ const Navbar = () => {
         </div>
       )}
 
+      <div className="hidden nav-middle desktop sm:flex">Navbar</div>
       <div className="hidden desktop sm:flex sm:gap-5 sm:items-center">
         <button className="search  border-white/60 hover:border-[1px] hover:bg-black/35 p-[6px] rounded-full">
           <svg
