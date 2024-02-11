@@ -1,8 +1,7 @@
 import { useState, useEffect } from "react";
 import gsap from "gsap";
 
-const Navbar = () => {
-  // hides the navigation bar on scroll
+const Navbar = () => { // hides the navigation bar on scroll
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [navOpacity, setNavOpacity] = useState(0.4);
 
