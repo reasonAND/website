@@ -14,17 +14,19 @@ function App() {
 
   const locomotiveScroll = new LocomotiveScroll();  
   useEffect(() => {
-    document.title = 'Welcome!'; // Set your dynamic title here
+    // document.title = 'Welcome!'; // Set dynamic title here
   }, []);
 
   return (
     <>
+    <div>
       <PreLoader />
       <Navbar />
       <Hero />
       <Showcase />
       <About />
       <Footer />
+    </div>
     </>
   )
 }

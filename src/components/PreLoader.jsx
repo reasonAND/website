@@ -9,16 +9,17 @@ const PreLoader = () => {
       setisLoading(false);
     }, 1500);
 
+    setisLoading(true);
     return () => clearTimeout(timeoutId);
   }, []);
 
-  return (
-    isLoading ? (
-      <div className="PreLoader w-[100vw] h-[100vh] bg-[#242424] flex justify-center items-center text-white">
-        nasir Lauru hai
+  return isLoading ? (
+    <div className={`fixed w-[100vw] h-[100vh] flex justify-between items-center text-[#f7ced7] text-[17px] z-[99]`}>
+      <div className="w-full h-full flex justify-center items-center bg-[#242424]">
+        Nasir lauru hai
       </div>
-    ) : null
-  );
+    </div>
+  ) : null;
 };
 
 export default PreLoader;
