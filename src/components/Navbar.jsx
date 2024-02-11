@@ -92,11 +92,11 @@ const Navbar = () => { // hides the navigation bar on scroll
             <div className="leading-[75px] flex flex-col">
               {heroTexts.map((title, index) =>
                 index === 0 ? (
-                  <a key={index} className="hamburger-list hover:bg-slate-900 border-red-100 hover:border text-[12.5vw] py-2 px-1 mt-1">
+                  <a key={index} className="hamburger-list border-pink-300 hover:border text-[12.5vw] py-2 px-1 mt-1">
                     {title}
                   </a>
                 ) : (
-                  <a key={index}  className="hamburger-list hover:bg-slate-900 border-red-100 hover:border text-[12.5vw] py-2 px-1">
+                  <a key={index}  className="hamburger-list border-pink-300 hover:border text-[12.5vw] py-2 px-1">
                     {title}
                   </a>
                 )

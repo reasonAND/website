@@ -1,17 +1,24 @@
 import { useEffect, useState } from "react";
+import gsap from "gsap";
 
 const PreLoader = () => {
   const [isLoading, setisLoading] = useState(true);
 
+  const tl = gsap.timeline();
+  const loadTime = 2;
+
   useEffect(() => {
-    console.log("loading");
     const timeoutId = setTimeout(() => {
       setisLoading(false);
-    }, 2000);
+    }, loadTime * 1000);
+    
+    tl.to(".selectClass", {
+      duration: loadTime,
+      ease: "power3.inOut",
+    })
 
-    setisLoading(true);
     return () => clearTimeout(timeoutId);
-  }, []);
+  }, [tl]);
 
   return isLoading ? (
     <div className={`fixed w-[100vw] h-[100vh] flex justify-between items-center text-[#f7ced7] text-[17px] z-[99]`}>
