@@ -7,17 +7,19 @@ import Navbar from "./components/Navbar"
 import Footer from './components/Footer';
 import Showcase from './components/Showcase';
 import About from './components/About';
+import PreLoader from './components/PreLoader';
 
 
 function App() {
 
   const locomotiveScroll = new LocomotiveScroll();  
   useEffect(() => {
-    document.title = 'Your Dynamic Title'; // Set your dynamic title here
+    document.title = 'Welcome!'; // Set your dynamic title here
   }, []);
 
   return (
     <>
+      <PreLoader />
       <Navbar />
       <Hero />
       <Showcase />

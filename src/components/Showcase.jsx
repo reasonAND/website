@@ -10,6 +10,7 @@ const Showcase = () => {
       <div className="h-[76.5%] bg-green-900 flex items-center">
         Showcase
       </div> */}
+        Showcase
       </div>
     </div>
   )

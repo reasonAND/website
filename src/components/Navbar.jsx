@@ -1,14 +1,29 @@
+import { useState } from "react";
+
 const Navbar = () => {
   // hides the navigation bar on scroll
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [navOpacity, setNavOpacity] = useState(40);
+
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+    isMenuOpen ? setNavOpacity(40) : setNavOpacity(100);
+  };
+
+  const heroTexts = ["LOREM", "LAURA", "LASSAN"];
+
   return (
-    <div className=" fixed w-[100vw] flex justify-between items-center py-[10px] px-4 sm:px-8 sm:text-[16px] text-[#f7ced7] text-[17px] bg-slate-800/40">
+    <div
+      className={`fixed w-[100vw] flex justify-between items-center py-[10px] px-4 sm:px-8 sm:text-[16px] text-[#f7ced7] text-[17px] bg-slate-800/${navOpacity}`}
+    >
       <div className="logo px-2">
         <svg
           width="55"
           height="35"
           viewBox="0 0 72 30"
           fill="none"
-          xmlns="http://www.w3.org/2000/svg">
+          xmlns="http://www.w3.org/2000/svg"
+        >
           <path
             d="M9.8393 10.2032C4.22951 10.3257 -0.0459221 14.7356 0.000372391 20.2752C0.0412204 25.3548 4.57808 30.3608 10.6862 29.9226C15.5145 29.5768 19.9015 25.4119 19.8525 20.0057C19.8035 14.5995 15.1904 10.0916 9.8393 10.2032ZM9.89649 25.7005C6.87101 25.7005 4.39834 23.1144 4.40924 19.9839C4.39525 19.2507 4.52792 18.522 4.79947 17.8407C5.07102 17.1594 5.47597 16.5392 5.99056 16.0164C6.50515 15.4937 7.11902 15.0789 7.79613 14.7966C8.47324 14.5142 9.19995 14.3698 9.93362 14.372C10.6673 14.3742 11.3931 14.5228 12.0686 14.8092C12.744 15.0956 13.3554 15.514 13.8668 16.0398C14.3783 16.5656 14.7796 17.1882 15.0471 17.8711C15.3146 18.554 15.4429 19.2834 15.4246 20.0166C15.4409 23.1008 12.9111 25.7059 9.88832 25.7005H9.89649Z"
             fill="currentColor"
@@ -32,18 +47,51 @@ const Navbar = () => {
         </svg>
       </div>
       <div className="hidden nav-middle desktop sm:flex">Navbar</div>
-      <button className="mobile hamburger sm:hidden">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          x="0px"
-          y="0px"
-          width="50"
-          height="35"
-          viewBox="0 0 50 50"
-          fill="#f7ced7">
-          <path d="M 3 9 A 1.0001 1.0001 0 1 0 3 11 L 47 11 A 1.0001 1.0001 0 1 0 47 9 L 3 9 z M 3 24 A 1.0001 1.0001 0 1 0 3 26 L 47 26 A 1.0001 1.0001 0 1 0 47 24 L 3 24 z M 3 39 A 1.0001 1.0001 0 1 0 3 41 L 47 41 A 1.0001 1.0001 0 1 0 47 39 L 3 39 z"></path>
-        </svg>
+      <button className="mobile hamburger sm:hidden" onClick={toggleMenu}>
+        {isMenuOpen ? (
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="50"
+            height="35"
+            fill="currentColor"
+            className="rotate-45"
+            viewBox="0 0 16 16">
+            <path d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2Z" />
+          </svg>
+        ) 
+        : (
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            x="0px"
+            y="0px"
+            width="50"
+            height="30"
+            viewBox="0 0 50 50"
+            fill="#f7ced7">
+            <path d="M 3 9 A 1.0001 1.0001 0 1 0 3 11 L 47 11 A 1.0001 1.0001 0 1 0 47 9 L 3 9 z M 3 24 A 1.0001 1.0001 0 1 0 3 26 L 47 26 A 1.0001 1.0001 0 1 0 47 24 L 3 24 z M 3 39 A 1.0001 1.0001 0 1 0 3 41 L 47 41 A 1.0001 1.0001 0 1 0 47 39 L 3 39 z" />
+          </svg>
+        )}
       </button>
+      {isMenuOpen && (
+        <div className="absolute top-full left-0 w-full h-[100vh] bg-slate-800 p-4 z-[69]">
+          <p className="text-white">
+            <div className="my-6 leading-[75px]">
+              {heroTexts.map((title, index) =>
+                index === 1 ? (
+                  <div key={index} className="text-[12.5vw]">
+                    {title}
+                  </div>
+                ) : (
+                  <h1 key={index} className="text-[12.5vw]">
+                    {title}
+                  </h1>
+                )
+              )}
+            </div>
+          </p>
+        </div>
+      )}
+
       <div className="hidden desktop sm:flex sm:gap-5 sm:items-center">
         <button className="search  border-white/60 hover:border-[1px] hover:bg-black/35 p-[6px] rounded-full">
           <svg

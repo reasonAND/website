@@ -6,8 +6,8 @@ const Footer = () => {
           Footer
         </h1>
       </div>
-      <div className="bg-[#242424] h-[5vh] flex justify-center items-center text-white">
-        made with ❤️ by reasonAND
+      <div className="bg-[#292551] h-[5vh] flex justify-center items-center text-white py-[15px]">
+        made with ❤️ by reason&
       </div>
     </>
   )
