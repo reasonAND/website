@@ -7,13 +7,14 @@ const Navbar = () => {
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
-    isMenuOpen ? setNavOpacity(40) : setNavOpacity(100);
+    isMenuOpen ? setNavOpacity(0.4) : setNavOpacity(1);
   };
+  let o = navOpacity;
 
   const heroTexts = ["LAURE MEY", "LAURA", "LASSAN", "NASIR"];
 
   return (
-    <div className={`fixed w-[100vw] flex justify-between items-center py-[10px] px-4 sm:px-8 sm:text-[16px] text-[#f7ced7] text-[17px] bg-slate-800/${navOpacity}`}>
+    <div className="fixed w-[100vw] flex justify-between items-center py-[10px] px-4 sm:px-8 sm:text-[16px] text-[#f7ced7] text-[17px]" style={{ background: `rgba(30, 41, 59, ${o}`}}>
       <div className="logo px-2">
         <svg
           width="55"
