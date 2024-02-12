@@ -13,26 +13,27 @@ import PreLoader from './components/PreLoader';
 function App() {
 
   const locomotiveScroll = new LocomotiveScroll();  
+
   useEffect(() => {
     document.title = 'Nasir Gandu'; // Set dynamic title here
     const timeoutId = setTimeout(() => {
       window.onunload = function() {
         window.scrollTo(0, 0);
       };
-    }, 500);
+    }, 250);
     return () => clearTimeout(timeoutId);
   }, []);
 
   return (
     <>
-    <div>
-      <PreLoader />
-      <Navbar />
-      <Hero />
-      <Showcase />
-      <About />
-      <Footer />
-    </div>
+      <div>
+        <PreLoader />
+        <Navbar />
+        <Hero />
+        <Showcase />
+        <About />
+        <Footer />
+      </div>
     </>
   )
 }

@@ -12,7 +12,7 @@ const PreLoader = () => {
       setisLoading(false);
     }, loadTime * 1000);
     
-    tl.to(".selectClass", {
+    tl.to(".selectClass", { // for loader animation
       duration: loadTime,
       ease: "power3.inOut",
     })
