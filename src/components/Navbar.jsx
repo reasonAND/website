@@ -14,16 +14,12 @@ const Navbar = () => { // hides the navigation bar on scroll
       height: isMenuOpen ? "100vh" : 0,
       ease: "power3.inOut",
     })
-    .to(".hamburger-list", {
-      duration: 0.15,
-      opacity: isMenuOpen ? 1 : 0,
-      // visibility: isMenuOpen ? "visible" : "hidden",
-      marginBottom: isMenuOpen ? "20px" : 0,
-      ease: "power3.inOut",
-    })
-    .to(".hamburger", {
-      // display: isMenuOpen ? "block" : "none"
-    });
+      .to(".hamburger-list", {
+        duration: 0.15,
+        opacity: isMenuOpen ? 1 : 0,
+        marginBottom: isMenuOpen ? "20px" : 0,
+        ease: "power3.inOut",
+      });
   }, [isMenuOpen, tl]);
 
   const toggleMenu = () => {
@@ -35,7 +31,7 @@ const Navbar = () => { // hides the navigation bar on scroll
   const heroTexts = ["LAURE MEY", "LAURA", "LASSAN", "NASIR"];
 
   return (
-    <div className="fixed w-[100vw] flex justify-between items-center py-[10px] px-4 sm:px-8 sm:text-[16px] text-[#f7ced7] text-[17px]" style={{ background: `rgba(30, 41, 59, ${o}`}}>
+    <div className="fixed w-[100vw] flex justify-between items-center py-[10px] px-4 sm:px-8 sm:text-[16px] text-[#f7ced7] text-[17px] z-10" style={{ background: `rgba(30, 41, 59, ${o}` }}>
       <div className="logo px-2">
         <svg
           width="55"
@@ -77,37 +73,38 @@ const Navbar = () => { // hides the navigation bar on scroll
             viewBox="0 0 16 16">
             <path d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2Z" />
           </svg>
-        ) 
-        : (
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            x="0px"
-            y="0px"
-            width="50"
-            height="30"
-            viewBox="0 0 50 50"
-            fill="#f7ced7">
-            <path d="M 3 9 A 1.0001 1.0001 0 1 0 3 11 L 47 11 A 1.0001 1.0001 0 1 0 47 9 L 3 9 z M 3 24 A 1.0001 1.0001 0 1 0 3 26 L 47 26 A 1.0001 1.0001 0 1 0 47 24 L 3 24 z M 3 39 A 1.0001 1.0001 0 1 0 3 41 L 47 41 A 1.0001 1.0001 0 1 0 47 39 L 3 39 z" />
-          </svg>
-        )}
+        )
+          : (
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              x="0px"
+              y="0px"
+              width="50"
+              height="30"
+              viewBox="0 0 50 50"
+              fill="#f7ced7">
+              <path d="M 3 9 A 1.0001 1.0001 0 1 0 3 11 L 47 11 A 1.0001 1.0001 0 1 0 47 9 L 3 9 z M 3 24 A 1.0001 1.0001 0 1 0 3 26 L 47 26 A 1.0001 1.0001 0 1 0 47 24 L 3 24 z M 3 39 A 1.0001 1.0001 0 1 0 3 41 L 47 41 A 1.0001 1.0001 0 1 0 47 39 L 3 39 z" />
+            </svg>
+          )}
       </button>
-        <div className={`menu absolute top-full left-0 w-full h-[100vh] bg-slate-800 px-4 z-[69]`}>
-          <div className="text-[#f7ced7]">
-            <div className="leading-[75px] flex flex-col">
-              {heroTexts.map((title, index) =>
-                index === 0 ? (
-                  <a key={index} className="hamburger-list border-pink-300 hover:border text-[12.5vw] py-2 px-1 mt-1">
-                    {title}
-                  </a>
-                ) : (
-                  <a key={index}  className="hamburger-list border-pink-300 hover:border text-[12.5vw] py-2 px-1">
-                    {title}
-                  </a>
-                )
-              )}
-            </div>
+      <div className={`menu absolute top-full left-0 w-full h-[100vh] bg-slate-800 px-4 sm:hidden ${isMenuOpen ? '' : 'hidden'}`}>
+        <div className="text-[#f7ced7]">
+          <div className="leading-[75px] flex flex-col ">
+            {heroTexts.map((title, index) =>
+              index === 0 
+              ? (
+                <a key={index} href="https://www.youtube.com/watch?v=yzfoogsTatE" className="hamburger-list border-pink-300 hover:border text-[12.5vw] py-2 px-1 mt-1">
+                  {title}
+                </a>
+              ) : (
+                <a key={index} href="https://www.youtube.com/watch?v=yzfoogsTatE" className="hamburger-list border-pink-300 hover:border text-[12.5vw] py-2 px-1">
+                  {title}
+                </a>
+              )
+            )}
           </div>
         </div>
+      </div>
 
       <div className="hidden nav-middle desktop sm:flex">Navbar</div>
       <div className="hidden desktop sm:flex sm:gap-5 sm:items-center">
@@ -119,8 +116,7 @@ const Navbar = () => { // hides the navigation bar on scroll
             width="25"
             height="25"
             viewBox="0 0 30 30"
-            fill="#f7ced7"
-          >
+            fill="#f7ced7">
             <path d="M 13 3 C 7.4886661 3 3 7.4886661 3 13 C 3 18.511334 7.4886661 23 13 23 C 15.396652 23 17.59741 22.148942 19.322266 20.736328 L 25.292969 26.707031 A 1.0001 1.0001 0 1 0 26.707031 25.292969 L 20.736328 19.322266 C 22.148942 17.59741 23 15.396652 23 13 C 23 7.4886661 18.511334 3 13 3 z M 13 5 C 17.430666 5 21 8.5693339 21 13 C 21 17.430666 17.430666 21 13 21 C 8.5693339 21 5 17.430666 5 13 C 5 8.5693339 8.5693339 5 13 5 z"></path>
           </svg>
         </button>
