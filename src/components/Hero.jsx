@@ -8,8 +8,8 @@ const Hero = () => {
           <div className="my-6 leading-[75px] flex flex-col">
             {heroTexts.map((title, index) => ( 
               index === 1 
-                ? <a key={index} href="https://www.google.com/" className="text-[12.5vw] z-[10]">{title}</a> 
-                : <a key={index} href="https://www.youtube.com/" className="text-[12.5vw] z-[10]">{title}</a>
+                ? <a key={index} href="https://www.google.com/" className="text-[12.5vw]">{title}</a> 
+                : <a key={index} href="https://www.youtube.com/" className="text-[12.5vw]">{title}</a>
             ))}
           </div>          
         </div>        

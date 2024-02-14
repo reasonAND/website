@@ -1,44 +1,51 @@
-/* eslint-disable no-unused-vars */
-import LocomotiveScroll from 'locomotive-scroll';
-import gsap from 'gsap';
-import ScrollTrigger from 'gsap/ScrollTrigger';
-import { useEffect } from 'react';
+import gsap from "gsap";
+import ScrollTrigger from "gsap/ScrollTrigger";
+import { useLayoutEffect, useRef } from "react";
 
-const About = () => {
+gsap.registerPlugin(ScrollTrigger);
 
-  const locomotiveScroll = new LocomotiveScroll(); 
-  gsap.registerPlugin(ScrollTrigger) 
-  const tl = gsap.timeline();
+export default function Scene() {
+  const component = useRef();
+  const slider = useRef();
 
-  useEffect(() => {
-
-    tl.to(".main", {
-      backgroundColor: "#242424",
-      scrollTrigger: {
-        trigger: ".main",
-        start: "top top",
-        end: "bottom top",
-        markers: true,
-        pin: true
-  
-      }
-
-    })    
-  
-    return () => {
-
-    }
-  }, [tl])
-  
-  
+  useLayoutEffect(() => {
+    let ctx = gsap.context(() => {
+      let panels = gsap.utils.toArray(".panel");
+      gsap.to(panels, {
+        xPercent: -100 * (panels.length - 1),
+        ease: "none",
+        scrollTrigger: {
+          trigger: slider.current,
+          pin: true,
+          scrub: 1,
+          snap: 1 / (panels.length - 1),
+          end: () => "+=" + slider.current.offsetWidth,
+          markers: false
+        }
+      });
+    }, component);
+    return () => ctx.revert();
+  });
 
   return (
-    <div className="w-[100vw] h-[100vh] bg-[#292551]">
-      <div className="main w-[100vw] h-[100vh] p-3 text-[#ffce00] bg-[#006450] text-[20px] text-center rounded-3xl">
-        About
+    <div className="bg-[#292551]">
+      <div className="App rounded-2xl overflow-hidden" ref={component}>
+        <div ref={slider} className="container w-[400vw] flex text-black text-[20px] text-center">
+          <div className="panel w-[100vw] h-[100vh] bg-green-400">
+            Nasir is Laura in green
+          </div>
+          <div className="panel w-[100vw] h-[100vh] bg-red-500">
+            Nasir is Laura in red
+          </div>
+          <div className="panel w-[100vw] h-[100vh] bg-blue-600">
+            Nasir is Laura in blue
+          </div>
+          <div className="panel w-[100vw] h-[100vh] bg-purple-700">
+            Nasir is Laura in purple
+          </div>
+        </div>
       </div>
-    </div>
-  )
-}
 
-export default About
+    </div>
+  );
+}

@@ -1,5 +1,5 @@
 /* eslint-disable no-unused-vars */
-import LocomotiveScroll from 'locomotive-scroll';
+// import LocomotiveScroll from 'locomotive-scroll';
 import { useEffect } from 'react';
 
 import Hero from "./components/Hero"
@@ -10,9 +10,10 @@ import About from './components/About';
 import PreLoader from './components/PreLoader';
 
 
+
 function App() {
 
-  const locomotiveScroll = new LocomotiveScroll();  
+  // const locomotiveScroll = new LocomotiveScroll();  
 
   useEffect(() => {
     document.title = 'Nasir Gandu'; // Set dynamic title here

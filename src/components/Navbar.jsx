@@ -17,8 +17,12 @@ const Navbar = () => { // hides the navigation bar on scroll
     .to(".hamburger-list", {
       duration: 0.15,
       opacity: isMenuOpen ? 1 : 0,
+      // visibility: isMenuOpen ? "visible" : "hidden",
       marginBottom: isMenuOpen ? "20px" : 0,
       ease: "power3.inOut",
+    })
+    .to(".hamburger", {
+      // display: isMenuOpen ? "block" : "none"
     });
   }, [isMenuOpen, tl]);
 
