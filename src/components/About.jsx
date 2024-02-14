@@ -17,8 +17,13 @@ export default function Scene() {
         scrollTrigger: {
           trigger: slider.current,
           pin: true,
-          scrub: 1,
-          snap: 1 / (panels.length - 1),
+          scrub: 0.2,
+          snap: {
+            snapTo: 1 / (panels.length - 1),
+            duration: 0.1,
+            delay: 0.1,
+            ease: "power1.inOut"
+          },
           end: () => "+=" + slider.current.offsetWidth,
           markers: false
         }
@@ -28,24 +33,15 @@ export default function Scene() {
   });
 
   return (
-    <div className="bg-[#292551]">
-      <div className="App rounded-2xl overflow-hidden" ref={component}>
-        <div ref={slider} className="container w-[400vw] flex text-black text-[20px] text-center">
-          <div className="panel w-[100vw] h-[100vh] bg-green-400">
-            Nasir is Laura in green
-          </div>
-          <div className="panel w-[100vw] h-[100vh] bg-red-500">
-            Nasir is Laura in red
-          </div>
-          <div className="panel w-[100vw] h-[100vh] bg-blue-600">
-            Nasir is Laura in blue
-          </div>
-          <div className="panel w-[100vw] h-[100vh] bg-purple-700">
-            Nasir is Laura in purple
-          </div>
+    <div className="App bg-[#292551]" ref={component}>
+      <div ref={slider} className="container h-screen flex flex-nowrap rounded-xl overflow-hidden">
+        <div className="panel min-w-[100vw] h-screen p-5 bg-green-500 text-[20px] text-center">
+          About
         </div>
+        <div className="panel min-w-[100vw] h-screen p-5 bg-red-500">ONE</div>
+        <div className="panel min-w-[100vw] h-screen p-5 bg-blue-500">TWO</div>
+        <div className="panel min-w-[100vw] h-screen p-5 bg-purple-500">THREE</div>
       </div>
-
     </div>
   );
 }

@@ -16,7 +16,7 @@ function App() {
   // const locomotiveScroll = new LocomotiveScroll();  
 
   useEffect(() => {
-    document.title = 'Nasir Gandu'; // Set dynamic title here
+    document.title = 'reason&'; // Set dynamic title here
     const timeoutId = setTimeout(() => {
       window.onunload = function() {
         window.scrollTo(0, 0);
@@ -27,14 +27,12 @@ function App() {
 
   return (
     <>
-      <div>
         <PreLoader />
         <Navbar />
         <Hero />
         <Showcase />
         <About />
         <Footer />
-      </div>
     </>
   )
 }

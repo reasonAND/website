@@ -1,11 +1,32 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import gsap from "gsap";
 
 const Navbar = () => { // hides the navigation bar on scroll
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [navOpacity, setNavOpacity] = useState(0.4);
 
+  // const [navToggle, setnavToggle] = useState(true);
+
+  
+  const navbarRef = useRef(null);
+
   const tl = gsap.timeline();
+
+  // // eslint-disable-next-line react-hooks/exhaustive-deps
+  // const handleClickOutside = (event) => {
+  //   if (
+  //     !event.target.matches("button") &&
+  //     !event.target.matches("a") &&
+  //     !event.target.closest("[role='button']")
+  //   ) {
+  //     // console.log("Hello, world!");
+  //     setnavToggle(!navToggle);
+      
+  //   }
+  //   else{
+  //     console.log("clicked on clickable");
+  //   }
+  // };
 
   useEffect(() => {
     tl.to(".menu", {
@@ -14,12 +35,18 @@ const Navbar = () => { // hides the navigation bar on scroll
       height: isMenuOpen ? "100vh" : 0,
       ease: "power3.inOut",
     })
-      .to(".hamburger-list", {
-        duration: 0.15,
-        opacity: isMenuOpen ? 1 : 0,
-        marginBottom: isMenuOpen ? "20px" : 0,
-        ease: "power3.inOut",
-      });
+    .to(".hamburger-list", {
+      duration: 0.15,
+      opacity: isMenuOpen ? 1 : 0,
+      marginBottom: isMenuOpen ? "20px" : 0,
+      ease: "power3.inOut",
+    });
+  
+    // document.addEventListener("click", handleClickOutside);
+
+    // return () => {
+    //   document.removeEventListener("click", handleClickOutside);
+    // };
   }, [isMenuOpen, tl]);
 
   const toggleMenu = () => {
@@ -31,7 +58,7 @@ const Navbar = () => { // hides the navigation bar on scroll
   const heroTexts = ["LAURE MEY", "LAURA", "LASSAN", "NASIR"];
 
   return (
-    <div className="fixed w-[100vw] flex justify-between items-center py-[10px] px-4 sm:px-8 sm:text-[16px] text-[#f7ced7] text-[17px] z-10" style={{ background: `rgba(30, 41, 59, ${o}` }}>
+    <div ref={navbarRef} className="fixed w-[100vw] flex justify-between items-center py-[10px] px-4 sm:px-8 sm:text-[16px] text-[#f7ced7] text-[17px] z-10" style={{ background: `rgba(30, 41, 59, ${o}` }}>
       <div className="logo px-2">
         <svg
           width="55"
