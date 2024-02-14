@@ -88,7 +88,7 @@ const Navbar = () => { // hides the navigation bar on scroll
         )}
       </button>
         <div className={`menu absolute top-full left-0 w-full h-[100vh] bg-slate-800 px-4 z-[69]`}>
-          <p className="text-[#f7ced7]">
+          <div className="text-[#f7ced7]">
             <div className="leading-[75px] flex flex-col">
               {heroTexts.map((title, index) =>
                 index === 0 ? (
@@ -102,7 +102,7 @@ const Navbar = () => { // hides the navigation bar on scroll
                 )
               )}
             </div>
-          </p>
+          </div>
         </div>
 
       <div className="hidden nav-middle desktop sm:flex">Navbar</div>
