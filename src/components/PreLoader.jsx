@@ -34,10 +34,10 @@ const PreLoader = () => {
   }, [isLoading, tl]);
 
   return (
-    <div className={`maindiv fixed w-[100vw] h-[100vh] flex justify-between items-center text-[#f7ced7] text-[17px] z-[99]`}>
-      <div className="w-full h-full flex justify-center items-center bg-white">
+    <div className={`maindiv fixed w-[100vw] h-[100vh] flex justify-between items-center text-yellow-400 text-[17px] z-[99]`}>
+      <div className="w-full h-full flex justify-center items-center bg-yellow-400">
         <div className="animation w-full h-full bg-[#242424] rounded-2xl p-5">
-          <div className="animation-fade w-full h-full rounded-lg p-5 text-white text-[90%]">
+          <div className="animation-fade w-full h-full rounded-lg p-5 text-[90%]">
             <h1 className="h-[90%] w-full">
               {/* Nasir lauru hai */}
             </h1>

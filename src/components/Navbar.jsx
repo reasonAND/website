@@ -55,7 +55,7 @@ const Navbar = () => { // hides the navigation bar on scroll
   };
   let o = navOpacity;
 
-  const heroTexts = ["LAURE MEY", "LAURA", "LASSAN", "NASIR"];
+  const heroTexts = ["LOREM", "IPSUM", "DOLOR", "MERLIN"];
 
   return (
     <div ref={navbarRef} className="fixed w-[100vw] flex justify-between items-center py-[10px] px-4 sm:px-8 sm:text-[16px] text-[#f7ced7] text-[17px] z-10" style={{ background: `rgba(30, 41, 59, ${o}` }}>
