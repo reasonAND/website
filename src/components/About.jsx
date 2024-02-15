@@ -4,11 +4,21 @@ import { useLayoutEffect, useRef } from "react";
 
 gsap.registerPlugin(ScrollTrigger);
 
+function getRandomColor() {
+  // Function to generate a random hex color
+  const letters = '0123456789ABCDEF';
+  let color = '#';
+  for (let i = 0; i < 6; i++) {
+    color += letters[Math.floor(Math.random() * 16)];
+  }
+  return color;
+}
+
 export default function Scene() {
   const component = useRef();
   const slider = useRef();
 
-  // const panels = ["LOREM", "MERLIN", "IPSUM", "DOLOR"];
+  const panels = ["LOREM", "MERLIN", "IPSUM", "DOLOR"];
 
   useLayoutEffect(() => {
     let ctx = gsap.context(() => {
@@ -37,18 +47,15 @@ export default function Scene() {
   return (
     <div className="App bg-[#292551]" ref={component}>
       <div ref={slider} className="container h-screen flex flex-nowrap rounded-xl overflow-hidden">
-        {/* { panels.map((title, index) => ( 
-              index === 1 
-                ? <a key={index} href="https://www.youtube.com/watch?v=yzfoogsTatE" className="text-[10vh] text-red-400 pr-5">{title}</ a> 
-                : <a key={index} href="https://www.youtube.com/watch?v=yzfoogsTatE" className="text-[10vh]">{title}</ a>
+        { panels.map((panel, index) => ( 
+              <div
+              key={index}
+              className={`panel min-w-[100vw] h-screen p-5 text-[20px] text-center`}
+              style={{ backgroundColor: getRandomColor() }}>
+                {panel}
+              </div>
           ))
-        } */}
-        <div className="panel min-w-[100vw] h-screen p-5 bg-green-500 text-[20px] text-center">
-          About
-        </div>
-        <div className="panel min-w-[100vw] h-screen p-5 bg-red-500">ONE</div>
-        <div className="panel min-w-[100vw] h-screen p-5 bg-blue-500">TWO</div>
-        <div className="panel min-w-[100vw] h-screen p-5 bg-purple-700">THREE</div>
+        }
       </div>
     </div>
   );
