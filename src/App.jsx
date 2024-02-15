@@ -1,6 +1,5 @@
 /* eslint-disable no-unused-vars */
-// import LocomotiveScroll from 'locomotive-scroll';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 
 import Hero from "./components/Hero"
 import Navbar from "./components/Navbar"
@@ -9,11 +8,14 @@ import Showcase from './components/Showcase';
 import About from './components/About';
 import PreLoader from './components/PreLoader';
 
-
-
 function App() {
+  
+  const [isDarkTheme, setIsDarkTheme] = useState(false);  
 
-  // const locomotiveScroll = new LocomotiveScroll();  
+  const toggleTheme = () => {
+    setIsDarkTheme((prevTheme) => !prevTheme);
+     console.log(isDarkTheme)
+  };
 
   useEffect(() => {
     document.title = 'reason&'; // Set dynamic title here
@@ -27,12 +29,12 @@ function App() {
 
   return (
     <>
-        <PreLoader />
-        <Navbar />
-        <Hero />
-        <Showcase />
-        <About />
-        <Footer />
+      <PreLoader />
+      <Navbar toggleTheme={toggleTheme} isDarkTheme={isDarkTheme} />
+      <Hero />
+      <Showcase />
+      <About />
+      <Footer />
     </>
   )
 }

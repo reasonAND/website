@@ -2,32 +2,14 @@ import { useState, useEffect, useRef } from "react";
 import gsap from "gsap";
 import ThemeToggle from "./utils/ThemeToggle";
 
-const Navbar = () => {
-  // hides the navigation bar on scroll
+// eslint-disable-next-line react/prop-types
+const Navbar = ({ toggleTheme, isDarkTheme }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [navOpacity, setNavOpacity] = useState(0.4);
-
-  // const [navToggle, setnavToggle] = useState(true);
 
   const navbarRef = useRef(null);
 
   const tl = gsap.timeline();
-
-  // // eslint-disable-next-line react-hooks/exhaustive-deps
-  // const handleClickOutside = (event) => {
-  //   if (
-  //     !event.target.matches("button") &&
-  //     !event.target.matches("a") &&
-  //     !event.target.closest("[role='button']")
-  //   ) {
-  //     // console.log("Hello, world!");
-  //     setnavToggle(!navToggle);
-
-  //   }
-  //   else{
-  //     console.log("clicked on clickable");
-  //   }
-  // };
 
   useEffect(() => {
     tl.to(".menu", {
@@ -42,11 +24,6 @@ const Navbar = () => {
       ease: "power3.inOut",
     });
 
-    // document.addEventListener("click", handleClickOutside);
-
-    // return () => {
-    //   document.removeEventListener("click", handleClickOutside);
-    // };
   }, [isMenuOpen, tl]);
 
   const toggleMenu = () => {
@@ -108,7 +85,7 @@ const Navbar = () => {
       </div>
 
       <div className="flex gap-[6px]">
-        <ThemeToggle />
+        <ThemeToggle onToggle={toggleTheme} isDarkTheme={isDarkTheme}  />
 
         {/* mobile  */}
         <button
