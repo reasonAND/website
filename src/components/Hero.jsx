@@ -18,16 +18,16 @@ const Hero = () => {
         </div>        
       </div>
 
-      <div className="hidden sm:flex w-[100vw] h-[100vh]">
-        <div className="left h-full w-[50%]">
-          <div className="my-6 leading-tight">
+      <div className="hidden sm:block w-[100vw] h-[100vh]">
+        {/* <div className="left h-full w-[50%] px-9 py-11 bg-white"> */}
+          <div className="leading-tight flex flex-col px-9 pt-11">
             {heroTexts.map((title, index) => ( 
               index === 1 
-                ? <button key={index} className="text-[10vh]">{title}</ button> 
-                : <button key={index} className="text-[10vh]">{title}</ button>
+                ? <a key={index} href="https://www.youtube.com/watch?v=yzfoogsTatE" className="text-[10vh] text-red-400 pr-5">{title}</ a> 
+                : <a key={index} href="https://www.youtube.com/watch?v=yzfoogsTatE" className="text-[10vh]">{title}</ a>
             ))}
           </div>
-        </div>
+        {/* </div> */}
         <div className="right h-full w-[50%]">
 
         </div>         
